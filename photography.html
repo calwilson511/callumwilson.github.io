@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="otherwork.html">Other Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="photo-gallery">
+
+  <div class="photo-grid">
+     <div class="photo-item">
+    <img src="images/pic1.png" alt="Autumn in Santander, Spain">
+    </div>
+
+     <div class="photo-item">
+    <img src="images/pic2.png" alt="A town square in Santander, Spain">
+    </div>
+
+     <div class="photo-item">
+    <img src="images/pic3.png" alt="The Grand Canyon at dusk">
+    </div>
+
+     <div class="photo-item">
+    <img src="images/pic4.png" alt="Vultures on the bayou">
+     </div>
+
+      <div class="photo-item">
+    <img src="images/pic5.png" alt="Green anole lizard visits the garden">
+    </div>
+
+     <div class="photo-item">
+    <img src="images/pic6.png" alt="Spring chick's first jump">
+    </div>
+
+    <div class="photo-item">
+    <img src="images/pic7.png" alt="In the middle of nowhere, Texas">
+    </div>
+
+    <div class="photo-item">
+    <img src="images/pic8.png" alt="Santander coastline">
+    </div>
+
+    <div class="photo-item">
+    <img src="images/pic9.png" alt="A fisherman in Malta">
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const images = document.querySelectorAll('.photo-item img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target !== lightboxImg) {
+      lightbox.classList.remove('active');
+    }
+  });
+</script>
+
+
+</body>
+</html>

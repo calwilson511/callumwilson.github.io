@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphics</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="otherwork.html">Other Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="photo-gallery">
+
+<h2 class="gallery-heading">Magma Coffee</h2>
+  <p class="gallery-description">
+    Packaging designs for a theoretical coffee brand. The idea was to combine different coffee beans and roasts with different chillies of varying spice levels to create different flavours of "chillie coffee". I experimented by grinding up dried chillies, mixing them with ground coffee, and brewing both together. The "Slow Burn" flavour was my favorite.
+  </p>
+  <br>
+
+  <div class="graphics-grid">
+     <div class="graphics-item">
+    <img src="images/coffee1.png" alt="The mildest spice level">
+    </div>
+
+     <div class="graphics-item">
+    <img src="images/coffee2.png" alt="The average spcie level">
+    </div>
+
+     <div class="graphics-item">
+    <img src="images/coffee3.png" alt="The hottest offering of coffee">
+    </div>
+</div>
+
+    <br>
+     <h2 class="gallery-heading">Cloud Chamber Coffee</h2>
+  <p class="gallery-description">
+    Another set of designs based on a theoretical coffee brand. This time the branding is based around greek gods, with each god having a different flavour. Design wise, I was mainly experimenting with colour, and trying to create a group of cohesive designs.
+  </p>
+  <br>
+
+  <div class="graphics-grid">
+     <div class="graphics-item">
+    <img src="images/poseidon.png" alt="Poseidon flavour coffee">
+     </div>
+
+      <div class="graphics-item">
+    <img src="images/zeus.png" alt="Zeus flavour coffee">
+    </div>
+
+     <div class="graphics-item">
+    <img src="images/hades.png" alt="Hades flavour coffee">
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const images = document.querySelectorAll('.graphics-item img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target !== lightboxImg) {
+      lightbox.classList.remove('active');
+    }
+  });
+</script>
+
+
+</body>
+</html>
